@@ -156,6 +156,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
         izq = new javax.swing.JButton();
         der1 = new javax.swing.JButton();
         izq1 = new javax.swing.JButton();
+        shiny = new javax.swing.JCheckBox();
         nombrePokemon = new javax.swing.JLabel();
         numPokedex = new javax.swing.JLabel();
         altura = new javax.swing.JLabel();
@@ -178,6 +179,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         der.setBorderPainted(false);
         der.setContentAreaFilled(false);
+        der.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         der.setOpaque(false);
         der.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,6 +190,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         izq.setBorderPainted(false);
         izq.setContentAreaFilled(false);
+        izq.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         izq.setOpaque(false);
         izq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +201,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         der1.setBorderPainted(false);
         der1.setContentAreaFilled(false);
-        der1.setOpaque(false);
+        der1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         der1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 der1ActionPerformed(evt);
@@ -208,6 +211,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
 
         izq1.setBorderPainted(false);
         izq1.setContentAreaFilled(false);
+        izq1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         izq1.setOpaque(false);
         izq1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,6 +219,21 @@ public class VentanaPokedex extends javax.swing.JFrame {
             }
         });
         getContentPane().add(izq1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 50, 10));
+
+        shiny.setAlignmentX(0.5F);
+        shiny.setAutoscrolls(true);
+        shiny.setContentAreaFilled(false);
+        shiny.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        shiny.setFocusPainted(false);
+        shiny.setRequestFocusEnabled(false);
+        shiny.setRolloverEnabled(false);
+        shiny.setVerifyInputWhenFocusTarget(false);
+        shiny.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shinyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(shiny, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 90, 80));
 
         nombrePokemon.setBackground(new java.awt.Color(102, 153, 255));
         nombrePokemon.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -336,6 +355,22 @@ public class VentanaPokedex extends javax.swing.JFrame {
         
         informacion(contador);
     }//GEN-LAST:event_izq1ActionPerformed
+
+    private void shinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shinyActionPerformed
+       if (shiny.isSelected()) {
+            try {
+                imagen1 = ImageIO.read(getClass().getResource("/imagenes/pokemonshiny.png"));
+                dibujaElPokemonQueEstaEnLaPosicion(contador);
+            } catch (IOException ex) {
+            }
+        } else {
+            try {
+                imagen1 = ImageIO.read(getClass().getResource("/imagenes/black-white.png"));
+                dibujaElPokemonQueEstaEnLaPosicion(contador);
+            } catch (IOException ex) {
+            }
+        }
+    }//GEN-LAST:event_shinyActionPerformed
 public void informacion(int _contador) {
         Pokemon p = listaPokemons.get(String.valueOf(_contador + 1));
         if (p != null) {
@@ -416,6 +451,7 @@ public void informacion(int _contador) {
     private javax.swing.JLabel nombrePokemon;
     private javax.swing.JLabel numPokedex;
     private javax.swing.JLabel peso;
+    private javax.swing.JCheckBox shiny;
     private javax.swing.JLabel tipo;
     // End of variables declaration//GEN-END:variables
 }
