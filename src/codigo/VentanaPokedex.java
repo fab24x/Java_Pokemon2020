@@ -335,7 +335,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
     }//GEN-LAST:event_izqActionPerformed
 
     private void der1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_der1ActionPerformed
-        contador +=15;
+        contador +=7;
         if (contador >=150){
             contador = 150;
         }
@@ -346,7 +346,7 @@ public class VentanaPokedex extends javax.swing.JFrame {
     }//GEN-LAST:event_der1ActionPerformed
 
     private void izq1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_izq1ActionPerformed
-        contador -=15;
+        contador -=7;
         if (contador <=0){
             contador = 0;
         }
